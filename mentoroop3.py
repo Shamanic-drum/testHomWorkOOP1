@@ -22,7 +22,6 @@ class Student:
         else:
             lecturer.grades[course] = [grade]
     
-    # НОВЫЙ МЕТОД для задания № 3
     def get_average_grade(self):
         """Вычисление средней оценки за домашние задания"""
         if not self.grades:
@@ -32,7 +31,6 @@ class Student:
             all_grades.extend(course_grades)
         return sum(all_grades) / len(all_grades) if all_grades else 0
     
-    # НОВЫЙ МАГИЧЕСКИЙ МЕТОД для задания № 3
     def __str__(self):
         avg_grade = self.get_average_grade()
         in_progress = ', '.join(self.courses_in_progress) if self.courses_in_progress else 'Нет курсов'
@@ -42,7 +40,6 @@ class Student:
                f"Курсы в процессе изучения: {in_progress}\n" \
                f"Завершенные курсы: {finished}"
     
-    # НОВЫЕ МЕТОДЫ ДЛЯ СРАВНЕНИЯ для задания № 3
     def __lt__(self, other):
         if not isinstance(other, Student):
             return NotImplemented
@@ -65,7 +62,6 @@ class Mentor:
         self.surname = surname
         self.courses_attached = []
     
-    # НОВЫЙ МАГИЧЕСКИЙ МЕТОД для задания № 3
     def __str__(self):
         return f"Имя: {self.name}\nФамилия: {self.surname}"
 
@@ -75,7 +71,7 @@ class Lecturer(Mentor):
         super().__init__(name, surname)
         self.grades = {}
     
-    # НОВЫЙ МЕТОД для задания № 3
+    
     def get_average_grade(self):
         """Вычисление средней оценки за лекции"""
         if not self.grades:
@@ -85,12 +81,10 @@ class Lecturer(Mentor):
             all_grades.extend(course_grades)
         return sum(all_grades) / len(all_grades) if all_grades else 0
     
-    # НОВЫЙ МАГИЧЕСКИЙ МЕТОД для задания № 3
     def __str__(self):
         avg_grade = self.get_average_grade()
         return f"{super().__str__()}\nСредняя оценка за лекции: {avg_grade:.1f}"
     
-    # НОВЫЕ МЕТОДЫ ДЛЯ СРАВНЕНИЯ для задания № 3
     def __lt__(self, other):
         if not isinstance(other, Lecturer):
             return NotImplemented
@@ -127,7 +121,7 @@ class Reviewer(Mentor):
             student.grades[course] = [grade]
 
 
-# ТЕСТ из задания № 2
+#  задание № 2
 lecturer = Lecturer('Иван', 'Иванов')
 reviewer = Reviewer('Пётр', 'Петров')
 student = Student('Алёхина', 'Ольга', 'Ж')
@@ -143,7 +137,7 @@ print(student.rate_lecture(reviewer, 'Python', 6))   # Ошибка
 
 print(lecturer.grades)  # {'Python': [7]}
 
-# ТЕСТ из задания № 3
+#  задание № 3
 print("\n=== ТЕСТ ЗАДАНИЯ № 3 ===")
 
 some_student = Student('Ruoy', 'Eman', 'your_gender')
@@ -165,7 +159,7 @@ print(some_lecturer)
 print("\nСтудент:")
 print(some_student)
 
-# Тестирование сравнения
+
 student1 = Student('Иван', 'Петров', 'М')
 student1.grades = {'Python': [8, 9, 7]}
 
