@@ -138,7 +138,7 @@ print(student.rate_lecture(reviewer, 'Python', 6))   # Ошибка
 print(lecturer.grades)  # {'Python': [7]}
 
 #  задание № 3
-print("\n=== ТЕСТ ЗАДАНИЯ № 3 ===")
+print("\n===  ЗАДАНИЕ № 3 ===")
 
 some_student = Student('Ruoy', 'Eman', 'your_gender')
 some_student.courses_in_progress = ['Python', 'Git']
